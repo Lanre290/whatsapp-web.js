@@ -457,12 +457,12 @@ exports.LoadUtils = () => {
         res.formattedTitle = chat.formattedTitle;
         res.isMuted = chat.muteExpiration == 0 ? false : true;
 
-        if (chat.groupMetadata) {
+        // if (chat.groupMetadata) {
             res.isGroup = true;
             const chatWid = window.Store.WidFactory.createWid((chat.id._serialized));
             await window.Store.GroupMetadata.update(chatWid);
             res.groupMetadata = chat.groupMetadata.serialize();
-        }
+        // }
         
         res.lastMessage = null;
         if (res.msgs && res.msgs.length) {
