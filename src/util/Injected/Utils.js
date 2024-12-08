@@ -450,7 +450,9 @@ exports.LoadUtils = () => {
 
     window.WWebJS.getChatModel = async chat => {
 
+        console.log(chat)
         let res = chat.serialize();
+        console.log(res, res.isGroup);
         res.isGroup = false;
         res.formattedTitle = chat.formattedTitle;
         res.isMuted = chat.muteExpiration == 0 ? false : true;
